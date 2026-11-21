@@ -1,4 +1,4 @@
-export type Project = { slug:string; title:string; category:string; description:string; outcome:string; stack:string[]; live?:string; repo?:string; };
+export type Project = { slug:string; title:string; category:string; description:string; outcome:string; stack:string[]; image?:string; live?:string; repo?:string; };
 const owner = "https://github.com/leephil1907-lab";
 export const projects: Project[] = [
  {slug:"reachmark",title:"Reachmark Digital",category:"Web2",description:"A digital growth studio focused on finding conversion leaks and turning evidence into practical improvements.",outcome:"A clearer path from website diagnosis to business growth.",stack:["Next.js","TypeScript","Supabase","Analytics"],live:"https://reachmarkdigital.xyz",repo:owner+"/sitegapreveal"},
