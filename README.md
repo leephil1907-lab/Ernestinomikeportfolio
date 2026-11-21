@@ -3,7 +3,7 @@
 A premium, dark editorial portfolio for Ernest Achuka, Founder of Reachmark Digital.
 
 ## Stack
-- Next.js 14 App Router + TypeScript
+- Next.js 15 App Router + TypeScript
 - Tailwind CSS
 - Framer Motion
 - Lucide icons
