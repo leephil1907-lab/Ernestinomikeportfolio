@@ -1,0 +1,10 @@
+export type Project = { slug:string; title:string; category:string; description:string; outcome:string; stack:string[]; live?:string; repo?:string; };
+const owner = "https://github.com/leephil1907-lab";
+export const projects: Project[] = [
+ {slug:"reachmark",title:"Reachmark Digital",category:"Web2",description:"A digital growth studio focused on finding conversion leaks and turning evidence into practical improvements.",outcome:"A clearer path from website diagnosis to business growth.",stack:["Next.js","TypeScript","Supabase","Analytics"],live:"https://reachmarkdigital.xyz",repo:owner+"/sitegapreveal"},
+ {slug:"voicebridge",title:"VoiceBridge",category:"AI",description:"A multilingual voice product designed to preserve the speaker's voice character across translated audio.",outcome:"Making multilingual voice communication feel more personal.",stack:["React","Supabase","ElevenLabs","LiveKit"],live:"https://voicebridge-9unm.onrender.com",repo:owner+"/voicebrigde"},
+ {slug:"primevest",title:"PrimeVest",category:"Fintech",description:"A brokerage product experience focused on market access, portfolio clarity and trading workflows.",outcome:"A structured interface for a complex financial product.",repo:owner+"/vantabrokerage"},
+ {slug:"leadflow",title:"Leadflow",category:"AI",description:"A lead workflow concept for service businesses to capture, organize and follow up on opportunities.",outcome:"Bringing lead capture and follow-up into one workflow.",repo:owner},
+ {slug:"tribe-culture",title:"Tribe Culture",category:"Client",description:"A premium fashion commerce experience with a strong editorial product presentation.",outcome:"A digital storefront built around brand and product identity.",repo:owner+"/tribesaint"},
+ {slug:"web3-systems",title:"Web3 Product Systems",category:"Web3",description:"Smart-contract and token product work across EVM and Solana ecosystems.",outcome:"Product infrastructure spanning token, payment and DeFi use cases.",repo:owner}
+];
