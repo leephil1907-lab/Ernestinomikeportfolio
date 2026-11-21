@@ -35,3 +35,18 @@ npm run start
 - Set the final production domain in `NEXT_PUBLIC_SITE_URL`.
 
 Project descriptions are positioning summaries, not claims of measured business results.
+
+## Interface and portfolio features
+- Liquid Glass-inspired navigation, content surfaces, modal and mobile contact dock.
+- Scroll progress, active-section navigation, command palette (`Ctrl/Cmd + K`) and back-to-top control.
+- Reduced-motion-aware Lenis scrolling, Framer Motion section reveals and a lazy-loaded 3D hero.
+- Expertise, capabilities, founder story, entrepreneurial journey and working approach sections.
+- Filterable project collection, cinematic visual treatment, project quick-view dialog and individual project routes.
+- Responsive mobile navigation, keyboard focus states and skip-to-content link.
+- Contact form API with Zod validation, honeypot and Resend delivery.
+
+## Real project imagery
+The project artwork component supports genuine local screenshots through the optional `image` property in `data/projects.ts`. Place approved captures in `public/projects/` and set each project's image path. Until then, the cards use a clearly stylized interface composition rather than claiming to show a real product screenshot.
+
+## Required environment
+`RESEND_API_KEY` and `CONTACT_TO` are required to deliver contact form messages. Configure a verified sender domain in Resend and update the `from` address in `app/api/contact/route.ts` before production.
