@@ -47,7 +47,7 @@ export default function Portfolio() {
  const submitContact=async(e:FormEvent<HTMLFormElement>)=>{e.preventDefault();setContactState("sending");const form=new FormData(e.currentTarget);try{const response=await fetch("/api/contact",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:form.get("name"),email:form.get("email"),message:form.get("message"),website:form.get("website")})});if(!response.ok)throw new Error("Contact request failed");setContactState("sent");e.currentTarget.reset()}catch{setContactState("error")}};
 
  return <main id="top" className="grain overflow-hidden"><a className="skip-link" href="#main-content">Skip to content</a>
-  <div id="main-content" tabIndex={-1} className="sr-only">Main content</div><motion.div style={{scaleX:progress}} className="fixed left-0 right-0 top-0 z-[80] h-[2px] origin-left bg-gradient-to-r from-[#c7f36b] via-[#8e83ff] to-[#54d7ff]"/>
+  <motion.div style={{scaleX:progress}} className="fixed left-0 right-0 top-0 z-[80] h-[2px] origin-left bg-gradient-to-r from-[#c7f36b] via-[#8e83ff] to-[#54d7ff]"/>
   <header className="fixed left-1/2 top-4 z-[70] flex w-[min(1180px,calc(100%-32px))] -translate-x-1/2 items-center justify-between rounded-2xl glass-nav px-4 py-3 md:px-6">
    <a href="#top" className="font-display text-lg font-bold tracking-tight">EA<span className="text-[#c7f36b]">.</span></a>
    <nav className="hidden items-center gap-7 md:flex">{nav.map(n=><button key={n.id} onClick={()=>jump(n.id)} className={`text-[13px] transition-colors hover:text-[#c7f36b] ${active===n.id?"text-[#c7f36b]":"text-white/65"}`}>{n.label}</button>)}</nav>
@@ -59,7 +59,7 @@ export default function Portfolio() {
   </header>
   <AnimatePresence>{mobile&&<motion.div initial={{opacity:0,y:-12}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-12}} className="fixed inset-0 z-[60] flex flex-col justify-center bg-[#090a0f] px-8 pt-20 md:hidden"><span className="eyebrow mb-8">Navigation</span>{nav.map((n,i)=><motion.button initial={{opacity:0,x:-15}} animate={{opacity:1,x:0}} transition={{delay:i*.05}} key={n.id} onClick={()=>jump(n.id)} className="border-b border-white/10 py-5 text-left font-display text-4xl">{n.label}</motion.button>)}<div className="mt-8 flex gap-3"><a className="glass-nav flex-1 rounded-xl p-4 text-center text-sm" href={site.whatsapp}>WhatsApp</a><a className="glass-nav flex-1 rounded-xl p-4 text-center text-sm" href={"mailto:"+site.personalEmail}>Email</a><a className="glass-nav flex-1 rounded-xl p-4 text-center text-sm" href={"tel:"+site.phone}>Call</a></div></motion.div>}</AnimatePresence>
 
-  <section className="relative flex min-h-[850px] items-center pb-24 pt-36 md:min-h-[940px]">
+  <section id="main-content" tabIndex={-1} className="relative flex min-h-[850px] items-center pb-24 pt-36 md:min-h-[940px]">
    <div className="grid-lines absolute inset-0"/>
    <HeroScene />
    <div className="pointer-events-none absolute right-[-12%] top-[14%] h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle,rgba(118,91,255,.2),rgba(118,91,255,0)_68%)] blur-2xl"/>
