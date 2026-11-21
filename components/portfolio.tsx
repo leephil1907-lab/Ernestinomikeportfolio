@@ -1,9 +1,12 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight, ArrowUp, Menu, X, Github, Mail, MessageCircle, Command, Copy, Check, ExternalLink, Sparkles } from "lucide-react";
 import { site } from "@/data/site";
 import { projects } from "@/data/projects";
+
+const HeroScene = dynamic(() => import("./hero-scene"), { ssr: false });
 
 const nav = [{label:"Work",id:"work"},{label:"Services",id:"services"},{label:"About",id:"about"},{label:"Process",id:"process"},{label:"Contact",id:"contact"}];
 const services = [
@@ -55,6 +58,7 @@ export default function Portfolio() {
 
   <section className="relative flex min-h-[850px] items-center pb-24 pt-36 md:min-h-[940px]">
    <div className="grid-lines absolute inset-0"/>
+   <HeroScene />
    <div className="pointer-events-none absolute right-[-12%] top-[14%] h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle,rgba(118,91,255,.2),rgba(118,91,255,0)_68%)] blur-2xl"/>
    <div className="pointer-events-none absolute right-[7%] top-[25%] hidden h-[440px] w-[440px] rounded-full border border-white/[.08] lg:block"/>
    <div className="pointer-events-none absolute right-[11%] top-[29%] hidden h-[360px] w-[360px] rounded-full border border-dashed border-[#c7f36b]/20 lg:block"/>
