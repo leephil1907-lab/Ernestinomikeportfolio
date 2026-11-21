@@ -82,3 +82,39 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .liquid-glass, .glass-nav { background: rgba(18,20,29,.96); }
 }
+
+
+.project-visual {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 52% 48%, rgba(139,125,255,.2), transparent 42%),
+    radial-gradient(ellipse at 78% 22%, rgba(199,243,107,.08), transparent 32%),
+    linear-gradient(135deg, #171a25 0%, #0a0b11 100%);
+}
+.project-visual-grid {
+  opacity: .36;
+  background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 78%);
+}
+.project-window {
+  background: linear-gradient(145deg, rgba(34,37,52,.96), rgba(13,15,23,.94));
+  box-shadow: 0 28px 90px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+.project-orbit {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border: 1px solid rgba(199,243,107,.13);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbit-drift 18s linear infinite;
+}
+.project-orbit-one { transform: rotateX(68deg) rotateZ(-24deg); }
+.project-orbit-two { width: 23rem; height: 23rem; border-color: rgba(151,137,255,.12); transform: rotateY(68deg) rotateZ(24deg); animation-duration: 26s; animation-direction: reverse; }
+@keyframes orbit-drift { to { rotate: 360deg; } }
+@media (prefers-reduced-motion:reduce) {
+  .project-orbit { animation: none; }
+}
