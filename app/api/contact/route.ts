@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       to: process.env.CONTACT_TO,
       replyTo: email,
       subject: "Portfolio enquiry from " + name,
-      text: "Name: " + name + "\nEmail: " + email + "\n\n" + message
+      text: "Name: " + name + "\nEmail: " + email + "\nBudget: " + (budget || "Not provided") + "\n\n" + message
     });
     if (result.error) return NextResponse.json({ error: "Message could not be sent. Please use WhatsApp or email." }, { status: 502 });
     return NextResponse.json({ ok: true });
