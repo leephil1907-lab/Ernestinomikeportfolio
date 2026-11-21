@@ -6,6 +6,7 @@ const schema = z.object({
   name: z.string().trim().min(2).max(100),
   email: z.string().trim().email().max(254),
   message: z.string().trim().min(15).max(5000),
+  budget: z.string().max(80).optional(),
   website: z.string().max(0).optional()
 });
 
@@ -29,7 +30,7 @@ export async function POST(request: NextRequest) {
     if (!process.env.RESEND_API_KEY || !process.env.CONTACT_TO) {
       return NextResponse.json({ error: "Contact delivery is not configured yet. Please use WhatsApp or email." }, { status: 503 });
     }
-    const { name, email, message } = parsed.data;
+    const { name, email, message, budget } = parsed.data;
     const result = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: process.env.CONTACT_TO,
